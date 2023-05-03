@@ -13,7 +13,7 @@ import {Block} from '../styled/Block';
 import Box from '../icons/box.svg';
 import Tag from '../icons/tag.svg';
 
-const Badge = () => {
+const IdTag = () => {
   return (
     <Block
       bg={'#c0c0c0'}
@@ -36,10 +36,11 @@ const Badge = () => {
         justifyContent={'space-between'}
         gap={7}>
         <Tag width={20} height={20} />
+        {/* eslint-disable-next-line react-native/no-inline-styles */}
         <Text style={{fontSize: 10}}>9</Text>
       </Block>
     </Block>
   );
 };
 
-export default Badge;
+export default IdTag;

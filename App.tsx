@@ -17,7 +17,7 @@ import {
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import Header from './Components/Header';
-import Badge from './Components/Badge';
+import IdTag from './Components/IdTag';
 import Article from './Components/Article';
 
 function App(): JSX.Element {
@@ -37,7 +37,7 @@ function App(): JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
-        <Badge />
+        <IdTag />
         <Article />
       </ScrollView>
     </SafeAreaView>
