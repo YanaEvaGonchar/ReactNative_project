@@ -13,6 +13,7 @@ export type BlockInterface = {
   alignItems?: string;
   alignSelf?: string;
   flex?: number;
+  gap?: number;
   opacity?: string;
   borderBottomColor?: string;
   borderBottomWidth?: string;
@@ -54,6 +55,7 @@ const StyledBlock = styled.View<BlockInterface>`
   ${({width}: {width?: string}): string | undefined =>
     width && `width: ${width}`};
   ${({height}): string | undefined => height && `height: ${height}`};
+  ${({gap}): number | undefined => gap};
   ${({marginTop}): number | undefined => marginTop};
   ${({marginBottom}): number | undefined => marginBottom};
   ${({marginLeft}): number | undefined => marginLeft};

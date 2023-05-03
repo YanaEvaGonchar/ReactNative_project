@@ -17,6 +17,8 @@ import {
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import Header from './Components/Header';
+import Badge from './Components/Badge';
+import Article from './Components/Article';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -35,6 +37,8 @@ function App(): JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+        <Badge />
+        <Article />
       </ScrollView>
     </SafeAreaView>
   );
