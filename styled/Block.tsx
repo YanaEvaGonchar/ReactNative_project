@@ -13,13 +13,12 @@ export type BlockInterface = {
   alignItems?: string;
   alignSelf?: string;
   flex?: number;
-  gap?: number;
   opacity?: string;
   borderBottomColor?: string;
   borderBottomWidth?: string;
   borderTopColor?: string;
   borderTopWidth?: string;
-  children: React.ReactNode | FC;
+  children?: React.ReactNode;
   position?: string;
   top?: string;
   left?: string;
@@ -30,6 +29,10 @@ export type BlockInterface = {
   borderWidth?: string;
   borderColor?: string;
   paddingHorizontal?: string;
+  paddingTop?: string;
+  paddingBottom?: string;
+  paddingRight?: string;
+  paddingLeft?: string;
   paddingVertical?: string;
   borderStyle?: string;
   marginTop?: number;
@@ -52,10 +55,8 @@ export type BlockInterface = {
 };
 
 const StyledBlock = styled.View<BlockInterface>`
-  ${({width}: {width?: string}): string | undefined =>
-    width && `width: ${width}`};
+  ${({width}): string | undefined => width && `width: ${width}`};
   ${({height}): string | undefined => height && `height: ${height}`};
-  ${({gap}): number | undefined => gap};
   ${({marginTop}): number | undefined => marginTop};
   ${({marginBottom}): number | undefined => marginBottom};
   ${({marginLeft}): number | undefined => marginLeft};
@@ -117,10 +118,19 @@ const StyledBlock = styled.View<BlockInterface>`
     paddingHorizontal && `padding-horizontal: ${paddingHorizontal}`};
   ${({paddingVertical}): string | undefined =>
     paddingVertical && `padding-vertical: ${paddingVertical}`};
+  ${({paddingTop}): string | undefined =>
+    paddingTop && `paddingTop: ${paddingTop}`};
+  ${({paddingBottom}): string | undefined =>
+    paddingBottom && `paddingBottom: ${paddingBottom}`};
+  ${({paddingRight}): string | undefined =>
+    paddingRight && `paddingRight: ${paddingRight}`};
+  ${({paddingLeft}): string | undefined =>
+    paddingLeft && `paddingLeft: ${paddingLeft}`};
   ${({borderStyle}): string | undefined =>
     borderStyle && `border-style: ${borderStyle}`};
   ${({overflow}): string | undefined => overflow && `overflow: ${overflow}`};
 `;
+
 export const Block: FC<BlockInterface> = ({children, ...rest}) => (
   <StyledBlock {...rest}>{children}</StyledBlock>
 );
