@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableOpacity, Animated} from 'react-native';
 
-import {Text} from 'react-native';
+import {Text} from '../styled/Text';
 import {Block} from '../styled/Block';
 import {Button} from '../styled/Button';
 import RightArrow from '../icons/right-arrow.svg';
@@ -22,10 +22,7 @@ const CartonItem: React.FC<Props> = ({
   showDeleteButton,
 }) => {
   return (
-    <Block
-      borderBottomColor={'grey'}
-      borderBottomWidth={'0.5px'}
-      >
+    <Block borderBottomColor={'grey'} borderBottomWidth={'0.5px'}>
       <Block
         paddingVertical={'25px'}
         paddingHorizontal={'20px'}
@@ -79,7 +76,7 @@ const CartonItem: React.FC<Props> = ({
 
       {showDeleteButton && (
         <Block
-          bg={'red'}
+          bg={'#f1411b'}
           justifyContent={'center'}
           alignItems={'center'}
           height={'100%'}
@@ -88,7 +85,9 @@ const CartonItem: React.FC<Props> = ({
           top={'0'}
           right={'0'}>
           <Button onPress={() => ''}>
-            <Text color={'#fff'}>Delete</Text>
+            <Text fontSize={16} color={'white'}>
+              Delete
+            </Text>
           </Button>
         </Block>
       )}

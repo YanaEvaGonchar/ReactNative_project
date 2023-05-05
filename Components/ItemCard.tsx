@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableOpacity, Animated} from 'react-native';
 
-import {Text} from 'react-native';
+import {Text} from '../styled/Text';
 import {Block} from '../styled/Block';
 import {Image} from '../styled/Image';
 import {Button} from '../styled/Button';
@@ -83,7 +83,7 @@ const ItemCard: React.FC<Props> = ({
                 borderRadius={'10px'}
                 justifyContent={'center'}
                 alignItems={'center'}>
-                <Text color={'#fff'} fontSize={12}>
+                <Text color={'white'} fontSize={12}>
                   {item.quantity}
                 </Text>
               </Button>
@@ -98,7 +98,7 @@ const ItemCard: React.FC<Props> = ({
 
       {showDeleteButton === item.id && (
         <Block
-          bg={'red'}
+          bg={'#f1411b'}
           justifyContent={'center'}
           alignItems={'center'}
           height={'100%'}
@@ -107,7 +107,7 @@ const ItemCard: React.FC<Props> = ({
           top={'0'}
           right={'0'}>
           <Button onPress={handleDelete}>
-            <Text color={'#fff'}>Delete</Text>
+            <Text fontSize={16} color={'white'}>Delete</Text>
           </Button>
         </Block>
       )}
