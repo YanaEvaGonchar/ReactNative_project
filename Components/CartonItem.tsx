@@ -34,7 +34,7 @@ const CartonItem: React.FC<Props> = ({
           justifyContent={'space-between'}>
           <Block flexDirection={'row'} alignItems={'center'}>
             <Block>
-              <Text marginBottom={5} fontSize={10} fontWeight={'bold'}>
+              <Text marginBottom={5} fontWeight={'bold'} fontSize={10}>
                 {carton.code}
               </Text>
             </Block>

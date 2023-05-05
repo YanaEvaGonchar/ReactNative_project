@@ -29,10 +29,9 @@ const Summary = () => {
           <Article />
         </>
       ) : (
-        <Block justifyContent={'space-between'}
-               height={'70%'}>
+        <Block justifyContent={'space-between'} height={'70%'}>
           <Carton />
-          <Footer title={'Pull the trigger to scan a carton barcode.'} />
+          <Footer />
         </Block>
       )}
     </Block>

@@ -11,11 +11,7 @@ import {Block} from '../styled/Block';
 import {Text} from '../styled/Text';
 import {Button} from '../styled/Button';
 
-type Props = {
-  title: string;
-};
-
-const Footer: FC<Props> = ({title}) => {
+const Footer = () => {
   const handlePress = () => {
     console.log('Button was pressed');
   };
@@ -43,7 +39,7 @@ const Footer: FC<Props> = ({title}) => {
         paddingHorizontal={'50px'}
         alignItems={'center'}>
         <Text color={'blue'} fontSize={18} textAlign={'center'}>
-          {title}
+          {'Pull the trigger to scan a carton barcode.'}
         </Text>
       </Button>
     </Block>

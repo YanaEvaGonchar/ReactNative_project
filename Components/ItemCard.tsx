@@ -38,7 +38,7 @@ const ItemCard: React.FC<Props> = ({
           flexDirection={'row'}
           alignItems={'center'}
           justifyContent={'space-between'}
-          paddingVertical={'10px'}>
+          paddingVertical={'12px'}>
           <Block flexDirection={'row'} alignItems={'center'}>
             <Animated.View style={{opacity: imageOpacity}}>
               <Image
@@ -64,7 +64,7 @@ const ItemCard: React.FC<Props> = ({
                 </Text>
                 <Text fontSize={10}>{item.size}</Text>
               </Block>
-              <Text color={'#9e9e9e'} fontSize={10}>
+              <Text color={'grey'} fontSize={10}>
                 {item.description}
               </Text>
             </Block>
@@ -107,7 +107,9 @@ const ItemCard: React.FC<Props> = ({
           top={'0'}
           right={'0'}>
           <Button onPress={handleDelete}>
-            <Text fontSize={16} color={'white'}>Delete</Text>
+            <Text fontSize={16} color={'white'}>
+              Delete
+            </Text>
           </Button>
         </Block>
       )}

@@ -33,7 +33,7 @@ const ChangeButton: FC<Props> = ({onButtonChange}) => {
         alignItems={'center'}
         shadowColor={'#000'}
         elevation={1}>
-        <Text color={'#000'} fontSize={12} fontWeight={'bold'}>
+        <Text color={'#000'} fontSize={14} fontWeight={'bold'}>
           Cartons
         </Text>
       </Button>
@@ -48,7 +48,7 @@ const ChangeButton: FC<Props> = ({onButtonChange}) => {
         alignItems={'center'}
         shadowColor={'#000'}
         elevation={1}>
-        <Text color={'#000'} fontSize={12} fontWeight={'bold'}>
+        <Text color={'#000'} fontSize={14} fontWeight={'bold'}>
           Articles
         </Text>
       </Button>
