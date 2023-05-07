@@ -44,6 +44,12 @@ const StyledButton = styled.TouchableOpacity<ButtonInterface>`
     boxShadow && `box-shadow: ${boxShadow}`};
   ${({elevation}): string | 0 | undefined =>
     elevation && `elevation: ${elevation}`};
+  ${({ borderColor }): string | undefined => borderColor && `borderColor: ${borderColor}`};
+  ${({ borderWidth }): string | undefined => borderWidth && `borderWidth: ${borderWidth}`};
+  ${({paddingHorizontal}): string | undefined =>
+          paddingHorizontal && `padding-horizontal: ${paddingHorizontal}`};
+  ${({paddingVertical}): string | undefined =>
+          paddingVertical && `padding-vertical: ${paddingVertical}`};
   ${({borderBottomColor, borderBottomWidth}): string | undefined =>
     borderBottomColor &&
     borderBottomWidth &&

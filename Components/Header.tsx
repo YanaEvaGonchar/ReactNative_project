@@ -42,9 +42,9 @@ const Header = () => {
       <Block flexDirection={'row'} justifyContent={'space-around'}>
         <Text style={{color: 'blue', fontSize: 14}}>Cancel</Text>
         <Text style={{fontWeight: 'bold', fontSize: 16}}>
-          Articles In Carton
+          Summary
         </Text>
-        <Text style={{color: 'blue', fontSize: 14}}>Confirm</Text>
+        <Text style={{color: 'blue', fontSize: 14}}>Prepare</Text>
       </Block>
     </Block>
   );
