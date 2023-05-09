@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 
 import {Block} from '../styled/Block';
-import Header from './Header';
-import Article from './Article';
-import IdTag from './IdTag';
-import ChangeButton from './ChangeButton';
-import SummaryHeader from './SummaryHeader';
-import Carton from './Carton';
-import Footer from './Footer';
+import Header from '../Components/Header';
+import Article from '../Components/Article';
+import IdTag from '../Components/IdTag';
+import ChangeButton from '../Components/ChangeButton';
+import SummaryHeader from '../Components/SummaryHeader';
+import Carton from '../Components/Carton';
+import Footer from '../Components/Footer';
 
 const Summary = () => {
   const [activeButton, setActiveButton] = useState('Cartons');
