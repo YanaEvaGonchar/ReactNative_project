@@ -25,10 +25,10 @@ function App(): JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      {/*<SafeAreaView style={backgroundStyle}>*/}
-      {/*  <Summary />*/}
-      {/*</SafeAreaView>*/}
-      <Registration />
+      <SafeAreaView style={backgroundStyle}>
+        <Summary />
+      </SafeAreaView>
+      {/*<Registration />*/}
     </NavigationContainer>
   );
 }
