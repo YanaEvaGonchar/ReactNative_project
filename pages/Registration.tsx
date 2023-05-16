@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useMemo} from 'react';
 import {Alert} from 'react-native';
 import {useFormik} from 'formik';
 
@@ -7,7 +7,7 @@ import {Text} from '../styled/Text';
 import {Button} from '../styled/Button';
 
 import RegistrationHeader from '../Components/RegistrationHeader';
-import Form from '../Components/Form';
+import FormField from '../Components/FormField';
 import ValidText from '../Components/ValidText';
 
 const Registration: FC = () => {
@@ -54,44 +54,47 @@ const Registration: FC = () => {
     }
   };
 
-  const renderValidText = () => {
+  const renderValidText = password => {
     const passwordValidations = [
       {
         key: 'Password must be at least 8 characters long',
-        validation: () => formik.values.password.length >= 8,
+        validation: () => password.length >= 8,
       },
       {
         key: 'Password must include at least one number',
-        validation: () => /\d/.test(formik.values.password),
+        validation: () => /\d/.test(password),
       },
       {
         key: 'Password must include at least one letter',
-        validation: () => /[a-zA-Z]/.test(formik.values.password),
+        validation: () => /[a-zA-Z]/.test(password),
       },
       {
         key: 'Password must include at least one special character',
-        validation: () => /[!@#$%^&*(),.?":{}|<>]/.test(formik.values.password),
+        validation: () => /[!@#$%^&*(),.?":{}|<>]/.test(password),
       },
       {
         key: 'Password must not have more than two repeated characters',
-        validation: () => !/(.)\1{2,}/.test(formik.values.password),
+        validation: () => !/(.)\1{2,}/.test(password),
       },
     ];
 
-    return (
-      <Block marginBottom={10} marginLeft={25}>
-        {passwordValidations.map(({key, validation}) => (
-          <ValidText key={key} isValid={validation()} text={key} />
-        ))}
-      </Block>
-    );
+    return passwordValidations.map(({key, validation}) => ({
+      key,
+      isValid: validation(),
+      text: key,
+    }));
   };
+
+  const passwordValidations = useMemo(
+    () => renderValidText(formik.values.password),
+    [formik.values.password],
+  );
 
   return (
     <Block flex={1}>
       <RegistrationHeader />
       <Block flex={2} paddingHorizontal={'20px'} paddingTop={'5px'}>
-        <Form
+        <FormField
           header="EMAIL"
           value={formik.values.email}
           onChangeText={formik.handleChange('email')}
@@ -100,7 +103,7 @@ const Registration: FC = () => {
           autoCapitalize="none"
           errorMessage={formik.touched.email && formik.errors.email}
         />
-        <Form
+        <FormField
           header="PASSWORD"
           value={formik.values.password}
           onChangeText={formik.handleChange('password')}
@@ -108,7 +111,13 @@ const Registration: FC = () => {
           secureTextEntry={true}
           errorMessage={formik.touched.password && formik.errors.password}
         />
-        <Block marginBottom={15}>{renderValidText()}</Block>
+        <Block marginBottom={15}>
+          <Block marginBottom={10} marginLeft={25}>
+            {passwordValidations.map(({key, isValid, text}) => (
+              <ValidText key={key} isValid={isValid} text={text} />
+            ))}
+          </Block>
+        </Block>
         <Block marginBottom={10}>
           <Button
             onPress={handleLogin}

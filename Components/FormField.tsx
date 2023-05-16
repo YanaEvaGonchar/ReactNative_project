@@ -55,7 +55,7 @@ const StyledSimpleInput = styled.TextInput<Omit<TextInput, 'header'>>`
 `;
 const isIos = Platform.OS === 'ios';
 
-const Form: FC<TextInput> = ({
+const FormField: FC<TextInput> = ({
   onChangeText,
   value,
   header,
@@ -130,4 +130,4 @@ const Form: FC<TextInput> = ({
   );
 };
 
-export default Form;
+export default FormField;
