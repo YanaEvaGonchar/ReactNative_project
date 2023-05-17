@@ -54,7 +54,7 @@ const Registration: FC = () => {
     }
   };
 
-  const renderValidText = password => {
+  const getValidationData = password => {
     const passwordValidations = [
       {
         key: 'Password must be at least 8 characters long',
@@ -86,7 +86,7 @@ const Registration: FC = () => {
   };
 
   const passwordValidations = useMemo(
-    () => renderValidText(formik.values.password),
+    () => getValidationData(formik.values.password),
     [formik.values.password],
   );
 

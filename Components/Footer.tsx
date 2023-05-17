@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React, {FC, useState, useEffect} from 'react';
+import React, {FC, useState, useEffect, useMemo} from 'react';
 import {Block} from '../styled/Block';
 import {Text} from '../styled/Text';
 import {Button} from '../styled/Button';
@@ -48,7 +48,7 @@ const Footer: FC = () => {
     }
   };
 
-  const getButtonColor = () => {
+  const buttonColor = useMemo(() => {
     if (error) {
       return '#c91f48';
     } else if (scanCount >= 3) {
@@ -56,9 +56,9 @@ const Footer: FC = () => {
     } else {
       return 'white';
     }
-  };
+  }, [error, scanCount]);
 
-  const getButtonText = () => {
+  const buttonText = useMemo(() => {
     if (error) {
       return 'Error';
     } else if (scanCount >= 3) {
@@ -68,23 +68,23 @@ const Footer: FC = () => {
     } else {
       return 'Pull the trigger to scan a carton barcode.';
     }
-  };
+  }, [error, scanCount, scanning]);
 
-  const getButtonTextColor = () => {
+  const buttonTextColor = useMemo(() => {
     if (error) {
       return 'white';
     } else {
       return '#0d3d8c';
     }
-  };
+  }, [error]);
 
-  const getBorderColor = () => {
+  const borderColor = useMemo(() => {
     if (error) {
       return '#c91f48';
     } else {
       return '#0d3d8c';
     }
-  };
+  }, [error]);
 
   return (
     <Block
@@ -102,15 +102,15 @@ const Footer: FC = () => {
         onPress={handlePress}
         width={'340px'}
         height={'70px'}
-        borderColor={getBorderColor()}
-        bg={getButtonColor()}
+        borderColor={borderColor}
+        bg={buttonColor}
         borderWidth={'1px'}
         borderRadius={'5px'}
         justifyContent={'center'}
         paddingHorizontal={'50px'}
         alignItems={'center'}>
-        <Text color={getButtonTextColor()} fontSize={18} textAlign={'center'}>
-          {getButtonText()}
+        <Text color={buttonTextColor} fontSize={18} textAlign={'center'}>
+          {buttonText}
         </Text>
       </Button>
     </Block>
