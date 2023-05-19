@@ -12,6 +12,8 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import Summary from './pages/Summary';
 import Registration from './pages/Registration';
+import Sign from './pages/Sign';
+
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -25,10 +27,11 @@ function App(): JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <SafeAreaView style={backgroundStyle}>
-        <Summary />
-      </SafeAreaView>
+      {/*<SafeAreaView style={backgroundStyle}>*/}
+      {/*  <Summary />*/}
+      {/*</SafeAreaView>*/}
       {/*<Registration />*/}
+      <Sign />
     </NavigationContainer>
   );
 }
