@@ -6,16 +6,12 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-  useColorScheme,
-} from 'react-native';
+import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-import Summary from './Components/Summary';
-
+import Summary from './pages/Summary';
+import Registration from './pages/Registration';
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -24,15 +20,16 @@ function App(): JSX.Element {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <NavigationContainer>
-        <StatusBar
-          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-          backgroundColor={backgroundStyle.backgroundColor}
-        />
-        <Summary />
-      </NavigationContainer>
-    </SafeAreaView>
+    <NavigationContainer>
+      <StatusBar
+        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+        backgroundColor={backgroundStyle.backgroundColor}
+      />
+      {/*<SafeAreaView style={backgroundStyle}>*/}
+      {/*  <Summary />*/}
+      {/*</SafeAreaView>*/}
+      <Registration />
+    </NavigationContainer>
   );
 }
 
