@@ -1,6 +1,5 @@
 import React, {useRef, useState} from 'react';
 import {Alert, Platform} from 'react-native';
-import {CameraRoll} from '@react-native-camera-roll/camera-roll';
 import SignatureScreen from 'react-native-signature-canvas';
 import RNFS from 'react-native-fs';
 import {Block} from '../styled/Block';
@@ -27,9 +26,9 @@ const Sign = () => {
       const imagePath = `${folderPath}/${fileName}`;
       await RNFS.writeFile(imagePath, signature, 'base64');
 
-      await CameraRoll.saveToCameraRoll(imagePath);
+      await RNFS.scanFile(imagePath); // Сканирование файла для добавления его в галерею устройства
 
-      Alert.alert('Success', 'Signature saved to CameraRoll successfully!');
+      Alert.alert('Success', 'Signature saved to gallery successfully!');
     } catch (error) {
       console.error('Failed to save signature:', error);
     }
@@ -57,16 +56,7 @@ const Sign = () => {
 
   return (
     <Block flex={1}>
-      <Block
-        height={'120px'}
-        alignItems={'center'}
-        justifyContent={'flex-end'}
-        paddingVertical={'20px'}>
-        <Text fontWeight={'bold'} fontSize={18}>
-          Signature
-        </Text>
-      </Block>
-      <Block marginBottom={20} height={'300px'}>
+      <Block marginBottom={20} height={'350px'}>
         <SignatureScreen
           webStyle={'.m-signature-pad--footer {display: none; margin: 0px;}'}
           ref={signatureRef}
