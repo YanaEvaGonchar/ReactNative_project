@@ -1,5 +1,6 @@
 import React, {useRef, useState} from 'react';
 import {Alert, Platform} from 'react-native';
+import {CameraRoll} from '@react-native-camera-roll/camera-roll';
 import SignatureScreen from 'react-native-signature-canvas';
 import RNFS from 'react-native-fs';
 import {Block} from '../styled/Block';
@@ -26,9 +27,9 @@ const Sign = () => {
       const imagePath = `${folderPath}/${fileName}`;
       await RNFS.writeFile(imagePath, signature, 'base64');
 
-      await RNFS.scanFile(imagePath); // Сканирование файла для добавления его в галерею устройства
+      await CameraRoll.saveToCameraRoll(imagePath);
 
-      Alert.alert('Success', 'Signature saved to gallery successfully!');
+      Alert.alert('Success', 'Signature saved to CameraRoll successfully!');
     } catch (error) {
       console.error('Failed to save signature:', error);
     }
