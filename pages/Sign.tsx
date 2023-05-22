@@ -1,43 +1,42 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import {Alert, Platform} from 'react-native';
+import {CameraRoll} from '@react-native-camera-roll/camera-roll';
 import SignatureScreen from 'react-native-signature-canvas';
 import RNFS from 'react-native-fs';
 import {Block} from '../styled/Block';
 import {Text} from '../styled/Text';
 import {Button} from '../styled/Button';
 
-const saveSignature = async signature => {
-  const fileName = 'signature.png';
-  const folderPath = `${
-    Platform.OS === 'ios'
-      ? RNFS.DocumentDirectoryPath
-      : RNFS.ExternalStorageDirectoryPath
-  }/AppName`;
-
-  try {
-    if (!(await RNFS.exists(folderPath))) {
-      await RNFS.mkdir(folderPath);
-    }
-
-    const imagePath = `${folderPath}/${fileName}`;
-    await RNFS.writeFile(imagePath, signature, 'base64');
-
-    Alert.alert('Success', 'Signature saved to device storage successfully!');
-  } catch (error) {
-    console.error('Failed to save signature:', error);
-  }
-};
-
 const Sign = () => {
   const signatureRef = useRef(null);
+  const [signature, setSignature] = useState('');
 
-  const handleSave = async () => {
-    const signature = await signatureRef.current?.readSignature();
-    if (signature) {
-      await saveSignature(signature);
-    } else {
-      Alert.alert('Error', 'Please provide a signature');
+  const saveSignature = async () => {
+    const fileName = 'signature.png';
+    const folderPath = `${
+      Platform.OS === 'ios'
+        ? RNFS.DocumentDirectoryPath
+        : RNFS.ExternalDirectoryPath
+    }/AppName`;
+
+    try {
+      if (!(await RNFS.exists(folderPath))) {
+        await RNFS.mkdir(folderPath);
+      }
+
+      const imagePath = `${folderPath}/${fileName}`;
+      await RNFS.writeFile(imagePath, signature, 'base64');
+
+      await CameraRoll.saveToCameraRoll(imagePath);
+
+      Alert.alert('Success', 'Signature saved to CameraRoll successfully!');
+    } catch (error) {
+      console.error('Failed to save signature:', error);
     }
+  };
+
+  const handleSave = async signature => {
+    setSignature(signature);
   };
 
   const handleConfirm = () => {
@@ -46,6 +45,14 @@ const Sign = () => {
 
   const handleClear = () => {
     signatureRef.current?.clearSignature();
+  };
+
+  const handleEmpty = () => {
+    console.log('Empty');
+  };
+
+  const handleEnd = () => {
+    signatureRef.current?.readSignature();
   };
 
   return (
@@ -59,10 +66,14 @@ const Sign = () => {
           Signature
         </Text>
       </Block>
-      <Block marginBottom={20} height={'400px'}>
+      <Block marginBottom={20} height={'300px'}>
         <SignatureScreen
           webStyle={'.m-signature-pad--footer {display: none; margin: 0px;}'}
           ref={signatureRef}
+          onEnd={handleEnd}
+          onOK={handleSave}
+          onEmpty={handleEmpty}
+          onClear={handleClear}
         />
       </Block>
       <Block
@@ -101,7 +112,7 @@ const Sign = () => {
         justifyContent={'center'}
         height={'50px'}
         bg={'#e4e8ee'}
-        onPress={handleSave}>
+        onPress={saveSignature}>
         <Text
           fontWeight={'bold'}
           fontSize={16}
