@@ -6,9 +6,10 @@ import {Text} from '../styled/Text';
 const RegistrationHeader: FC = () => {
   return (
     <Block
-      height={'280px'}
+      height={'250px'}
       justifyContent={'center'}
       alignItems={'center'}
+      marginBottom={30}
       bg={'#f1931b'}>
       <Block flexDirection={'row'} alignItems={'baseline'}>
         <Text fontSize={120} color="#fff">
