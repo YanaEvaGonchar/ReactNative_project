@@ -16,6 +16,7 @@ import Summary from './pages/Summary';
 import Registration from './pages/Registration';
 import Sign from './pages/Sign';
 import Scanner from './pages/Scanner';
+import Chart from './pages/Chart';
 
 const Drawer = createDrawerNavigator();
 
@@ -37,6 +38,7 @@ function App(): JSX.Element {
         <Drawer.Screen name="Summary" component={Summary} />
         <Drawer.Screen name="Signature" component={Sign} />
         <Drawer.Screen name="Scanner" component={Scanner} />
+        <Drawer.Screen name="World population сhart" component={Chart} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

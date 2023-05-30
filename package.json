@@ -43,6 +43,7 @@
     "react-native": "0.71.7",
     "react-native-camera": "^4.2.1",
     "react-native-camera-kit": "^13.0.0",
+    "react-native-chart-kit": "^6.12.0",
     "react-native-fs": "^2.20.0",
     "react-native-gesture-handler": "^2.10.1",
     "react-native-permissions": "^3.8.0",
@@ -52,6 +53,7 @@
     "react-native-screens": "^3.20.0",
     "react-native-signature-canvas": "^4.5.1",
     "react-native-svg": "^13.9.0",
+    "react-native-svg-charts": "^5.4.0",
     "react-native-webview": "^12.0.2",
     "styled-components": "^5.3.10"
   },
