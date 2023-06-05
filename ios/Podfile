@@ -46,6 +46,7 @@ target 'RN_project' do
 
   target 'RN_projectTests' do
     inherit! :complete
+    pod 'lottie-ios'
     # Pods for testing
   end
 
