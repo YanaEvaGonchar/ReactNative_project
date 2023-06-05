@@ -1,10 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
 import 'react-native-gesture-handler';
 import {StatusBar, useColorScheme} from 'react-native';
@@ -18,6 +11,7 @@ import Sign from './pages/Sign';
 import Scanner from './pages/Scanner';
 import Chart from './pages/Chart';
 import BarcodeScanning from './pages/BarcodeScanning';
+import FaceID from './pages/FaceID';
 
 const Drawer = createDrawerNavigator();
 
@@ -41,6 +35,7 @@ function App(): JSX.Element {
         <Drawer.Screen name="Scanner" component={Scanner} />
         <Drawer.Screen name="World population сhart" component={Chart} />
         <Drawer.Screen name="Barcode Scaner" component={BarcodeScanning} />
+        <Drawer.Screen name="Face ID" component={FaceID} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
