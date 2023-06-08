@@ -13,6 +13,7 @@ import Chart from './pages/Chart';
 import BarcodeScanning from './pages/BarcodeScanning';
 import FaceID from './pages/FaceID';
 import Splash from './pages/Splash';
+import BubbleLevel from './pages/BubbleLevel';
 
 const Drawer = createDrawerNavigator();
 
@@ -47,6 +48,7 @@ function App(): JSX.Element {
             <Drawer.Screen name="World population сhart" component={Chart} />
             <Drawer.Screen name="Barcode Scaner" component={BarcodeScanning} />
             <Drawer.Screen name="Face ID" component={FaceID} />
+            <Drawer.Screen name="Bubble Level" component={BubbleLevel} />
           </Drawer.Navigator>
         </NavigationContainer>
       )}
