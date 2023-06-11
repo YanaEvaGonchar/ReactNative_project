@@ -4,6 +4,8 @@
 <dict>
       <key>NSAppleMusicUsageDescription</key>
       <string>YOUR TEXT</string>
+      <key>NSMicrophoneUsageDescription</key>
+      <string>Microphone permission</string>
       <key>NSBluetoothAlwaysUsageDescription</key>
       <string>YOUR TEXT</string>
       <key>NSBluetoothPeripheralUsageDescription</key>

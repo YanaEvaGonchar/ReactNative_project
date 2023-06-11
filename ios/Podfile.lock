@@ -351,6 +351,16 @@ PODS:
     - RCTTypeSafety
     - React-Core
     - ReactCommon/turbomodule/core
+  - react-native-slider (4.4.2):
+    - React-Core
+  - react-native-track-player (3.2.0):
+    - React-Core
+    - SwiftAudioEx (= 0.15.3)
+  - react-native-video (5.2.1):
+    - React-Core
+    - react-native-video/Video (= 5.2.1)
+  - react-native-video/Video (5.2.1):
+    - React-Core
   - react-native-webview (12.0.2):
     - React-Core
   - React-perflogger (0.71.7)
@@ -477,9 +487,15 @@ PODS:
     - React-RCTImage
   - RNSensors (7.3.6):
     - React-Core
+  - RNSound (0.11.2):
+    - React-Core
+    - RNSound/Core (= 0.11.2)
+  - RNSound/Core (0.11.2):
+    - React-Core
   - RNSVG (12.5.1):
     - React-Core
   - SocketRocket (0.6.0)
+  - SwiftAudioEx (0.15.3)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -536,6 +552,9 @@ DEPENDENCIES:
   - react-native-camera (from `../node_modules/react-native-camera`)
   - "react-native-cameraroll (from `../node_modules/@react-native-camera-roll/camera-roll`)"
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
+  - "react-native-slider (from `../node_modules/@react-native-community/slider`)"
+  - react-native-track-player (from `../node_modules/react-native-track-player`)
+  - react-native-video (from `../node_modules/react-native-video`)
   - react-native-webview (from `../node_modules/react-native-webview`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -557,6 +576,7 @@ DEPENDENCIES:
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSensors (from `../node_modules/react-native-sensors`)
+  - RNSound (from `../node_modules/react-native-sound`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -577,6 +597,7 @@ SPEC REPOS:
     - lottie-ios
     - OpenSSL-Universal
     - SocketRocket
+    - SwiftAudioEx
     - YogaKit
 
 EXTERNAL SOURCES:
@@ -630,6 +651,12 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-camera-roll/camera-roll"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
+  react-native-slider:
+    :path: "../node_modules/@react-native-community/slider"
+  react-native-track-player:
+    :path: "../node_modules/react-native-track-player"
+  react-native-video:
+    :path: "../node_modules/react-native-video"
   react-native-webview:
     :path: "../node_modules/react-native-webview"
   React-perflogger:
@@ -672,6 +699,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-screens"
   RNSensors:
     :path: "../node_modules/react-native-sensors"
+  RNSound:
+    :path: "../node_modules/react-native-sound"
   RNSVG:
     :path: "../node_modules/react-native-svg"
   Yoga:
@@ -717,6 +746,9 @@ SPEC CHECKSUMS:
   react-native-camera: 210a872c84d3aa0982a9223047ef9e743ed694fa
   react-native-cameraroll: f750b9d05192ebf21e3474696a78c0df419abb33
   react-native-safe-area-context: 38065a09aae3ae1302eee59fc1f9c72d62e5e095
+  react-native-slider: a8cd117608235cf411dd507929ed589a89320b47
+  react-native-track-player: 86649137952f7beeed18b4be7974be1d431d967f
+  react-native-video: 79a186e378d327b6c08bc3982c17ef455c6bd75c
   react-native-webview: ec44fd7b7fd3655aa2aa9c7c8ebae6465a53ce6c
   React-perflogger: 2d505bbe298e3b7bacdd9e542b15535be07220f6
   React-RCTActionSheet: 0e96e4560bd733c9b37efbf68f5b1a47615892fb
@@ -738,8 +770,10 @@ SPEC CHECKSUMS:
   RNReanimated: b1220a0e5168745283ff5d53bfc7d2144b2cee1b
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
   RNSensors: 117ba71c7eeeea0407ea0c0bb79e3495d602049b
+  RNSound: 1081cf2576b404ca804daf4934bb644cb506ff98
   RNSVG: d7d7bc8229af3842c9cfc3a723c815a52cdd1105
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
+  SwiftAudioEx: 83eabba2940924fc1c0d5cb0896049921365229c
   Yoga: d56980c8914db0b51692f55533409e844b66133c
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 

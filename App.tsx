@@ -14,6 +14,8 @@ import BarcodeScanning from './pages/BarcodeScanning';
 import FaceID from './pages/FaceID';
 import Splash from './pages/Splash';
 import BubbleLevel from './pages/BubbleLevel';
+import MediaPlayer from './pages/MediaPlayer';
+import VideoPlayer from './pages/VideoPlayer';
 
 const Drawer = createDrawerNavigator();
 
@@ -49,6 +51,8 @@ function App(): JSX.Element {
             <Drawer.Screen name="Barcode Scaner" component={BarcodeScanning} />
             <Drawer.Screen name="Face ID" component={FaceID} />
             <Drawer.Screen name="Bubble Level" component={BubbleLevel} />
+            <Drawer.Screen name="Media Player" component={MediaPlayer} />
+            <Drawer.Screen name="Video Player" component={VideoPlayer} />
           </Drawer.Navigator>
         </NavigationContainer>
       )}
