@@ -77,7 +77,6 @@ const MediaPlayer = () => {
         <Button onPress={onBack}>
           <PlayRewind width={30} height={30} />
         </Button>
-
         {pause ? (
           <Button onPress={onPlay}>
             <Play width={30} height={30} />
@@ -87,7 +86,6 @@ const MediaPlayer = () => {
             <Pause width={30} height={30} />
           </Button>
         )}
-
         <Button onPress={onNext}>
           <PlayForward width={30} height={30} />
         </Button>

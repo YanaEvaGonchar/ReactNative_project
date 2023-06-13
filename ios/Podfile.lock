@@ -104,6 +104,9 @@ PODS:
     - FBLazyVector (= 0.71.7)
     - RCTRequired (= 0.71.7)
     - React-Core (= 0.71.7)
+  - RCTYouTube (2.0.2):
+    - React
+    - YoutubePlayer-in-WKWebView (~> 0.3.1)
   - React (0.71.7):
     - React-Core (= 0.71.7)
     - React-Core/DevSupport (= 0.71.7)
@@ -496,9 +499,11 @@ PODS:
     - React-Core
   - SocketRocket (0.6.0)
   - SwiftAudioEx (0.15.3)
+  - XCDYouTubeKit (2.15.2)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
+  - YoutubePlayer-in-WKWebView (0.3.8)
 
 DEPENDENCIES:
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
@@ -535,6 +540,7 @@ DEPENDENCIES:
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
+  - RCTYouTube (from `../node_modules/react-native-youtube`)
   - React (from `../node_modules/react-native/`)
   - React-callinvoker (from `../node_modules/react-native/ReactCommon/callinvoker`)
   - React-Codegen (from `build/generated/ios`)
@@ -578,6 +584,7 @@ DEPENDENCIES:
   - RNSensors (from `../node_modules/react-native-sensors`)
   - RNSound (from `../node_modules/react-native-sound`)
   - RNSVG (from `../node_modules/react-native-svg`)
+  - XCDYouTubeKit (~> 2.8)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -598,7 +605,9 @@ SPEC REPOS:
     - OpenSSL-Universal
     - SocketRocket
     - SwiftAudioEx
+    - XCDYouTubeKit
     - YogaKit
+    - YoutubePlayer-in-WKWebView
 
 EXTERNAL SOURCES:
   boost:
@@ -621,6 +630,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/RCTRequired"
   RCTTypeSafety:
     :path: "../node_modules/react-native/Libraries/TypeSafety"
+  RCTYouTube:
+    :path: "../node_modules/react-native-youtube"
   React:
     :path: "../node_modules/react-native/"
   React-callinvoker:
@@ -731,6 +742,7 @@ SPEC CHECKSUMS:
   RCT-Folly: 424b8c9a7a0b9ab2886ffe9c3b041ef628fd4fb1
   RCTRequired: 5a4a30ac20c86eeadd6844a9328f78d4168cf9b2
   RCTTypeSafety: 279fc5861a89f0f37db3a585f27f971485b4b734
+  RCTYouTube: 13fdb790b6339111cb7191427cac8708a8a09215
   React: 88307a9be3bd0e71a6822271cf28b84a587fb97f
   React-callinvoker: 35fb980c454104ebe82f0afb9826830089248e08
   React-Codegen: a8dbde3b7476d5c19437d2adb9e8ea1b426b9595
@@ -774,9 +786,11 @@ SPEC CHECKSUMS:
   RNSVG: d7d7bc8229af3842c9cfc3a723c815a52cdd1105
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   SwiftAudioEx: 83eabba2940924fc1c0d5cb0896049921365229c
+  XCDYouTubeKit: b120aced3d8638ffb570c5450cddb5a1dac448c7
   Yoga: d56980c8914db0b51692f55533409e844b66133c
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
+  YoutubePlayer-in-WKWebView: 4fca3b4f6f09940077bfbae7bddb771f2b43aacd
 
-PODFILE CHECKSUM: 732fce4108e32083c66146fb745d181019b3b773
+PODFILE CHECKSUM: 1b90371b425068ce7d470a846b2f1481e866150c
 
 COCOAPODS: 1.12.1

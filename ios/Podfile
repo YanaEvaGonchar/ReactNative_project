@@ -47,6 +47,7 @@ target 'RN_project' do
   target 'RN_projectTests' do
     inherit! :complete
     pod 'lottie-ios'
+    pod 'XCDYouTubeKit', '~> 2.8'
     # Pods for testing
   end
 
