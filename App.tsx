@@ -15,6 +15,8 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Summary from './pages/Summary';
 import Registration from './pages/Registration';
 import Sign from './pages/Sign';
+import WebViewPage from './pages/WebViewPage';
+import InAppBrowserPage from './pages/InAppBrowserPage';
 
 const Drawer = createDrawerNavigator();
 
@@ -35,6 +37,8 @@ function App(): JSX.Element {
         <Drawer.Screen name="Registration" component={Registration} />
         <Drawer.Screen name="Summary" component={Summary} />
         <Drawer.Screen name="Signature" component={Sign} />
+        <Drawer.Screen name="WebView" component={WebViewPage} />
+        <Drawer.Screen name="InAppBrowser" component={InAppBrowserPage} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
