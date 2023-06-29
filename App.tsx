@@ -15,6 +15,8 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Summary from './pages/Summary';
 import Registration from './pages/Registration';
 import Sign from './pages/Sign';
+import PlayerWithMediaControllers from './pages/PlayerWithMediaControllers';
+import Keyboard from './pages/Keyboard';
 
 const Drawer = createDrawerNavigator();
 
@@ -35,6 +37,11 @@ function App(): JSX.Element {
         <Drawer.Screen name="Registration" component={Registration} />
         <Drawer.Screen name="Summary" component={Summary} />
         <Drawer.Screen name="Signature" component={Sign} />
+        <Drawer.Screen
+          name="Player with media controllers"
+          component={PlayerWithMediaControllers}
+        />
+        <Drawer.Screen name="Keyboard" component={Keyboard} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
