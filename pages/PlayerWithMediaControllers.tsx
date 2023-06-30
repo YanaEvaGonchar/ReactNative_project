@@ -122,7 +122,7 @@ const PlayerWithMediaControllers = () => {
           justifyContent={'center'}
           alignItems={'center'}
           gap={5}>
-          <Text>{info.title}</Text>
+          <Text fontSize={16}>{info.title}</Text>
           <Text>{info.artist}</Text>
         </Block>
         <Block flexDirection={'row'} gap={40}>
