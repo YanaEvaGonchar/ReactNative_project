@@ -15,7 +15,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Summary from './pages/Summary';
 import Registration from './pages/Registration';
 import Sign from './pages/Sign';
-import GPDWithRealm from './pages/GPDWithRealm';
+import GPSWithRealm from './pages/GPSWithRealm';
 
 const Drawer = createDrawerNavigator();
 
@@ -36,7 +36,7 @@ function App(): JSX.Element {
         <Drawer.Screen name="Registration" component={Registration} />
         <Drawer.Screen name="Summary" component={Summary} />
         <Drawer.Screen name="Signature" component={Sign} />
-        <Drawer.Screen name="GPS with Realm" component={GPDWithRealm} />
+        <Drawer.Screen name="GPS with Realm" component={GPSWithRealm} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
